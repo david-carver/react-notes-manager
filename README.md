@@ -1,7 +1,16 @@
 # React notes manager
 
 ## Getting Started
+
+### Run UI
+
 ```bash
-npm i
-npm start
+yarn install
+yarn start
+```
+
+### Run API
+
+```bash
+yarn run run dev-server
 ```

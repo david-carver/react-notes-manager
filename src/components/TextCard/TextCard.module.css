@@ -1,0 +1,33 @@
+.container {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25);
+  border-radius: 22px;
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.card-hover {
+  border-color: #0d6efd;
+}
+
+.trash-not-hover {
+  color: #b8b8b8;
+}
+
+.trash-hover {
+  color: #ff7373;
+}

@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
+    "axios": "^1.5.0",
+    "node-cron": "^3.0.2",
+    "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
     "react-bootstrap-icons": "^1.8.4",
     "react-dom": "^18.2.0",
@@ -16,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev-server": "npx json-server --watch db.json -p 3200"
+    "dev-server": "json-server --watch db.json -p 3200"
   },
   "eslintConfig": {
     "extends": [
