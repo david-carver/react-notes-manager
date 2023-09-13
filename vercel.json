@@ -1,6 +1,0 @@
-{
-  "framework": "react",
-  "dev": "npm run start",
-  "json-server": "node json-server.js",
-  "dev:all": "npm-run-all dev json-server"
-}

@@ -1,5 +1,8 @@
 const cron = require("node-cron");
-const jsonServer = require("json-server");
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json'); // point to your db.json
+const middlewares = jsonServer.defaults();
 
 const dbFile = "./db.json";
 const defaultDbFile = "./db-default.json";
