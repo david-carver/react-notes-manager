@@ -1,5 +1,5 @@
 import NoteAPI from "api/note-api";
-import SearchBar from "componentsTemp/SearchBar/SearchBar";
+import SearchBar from "components/SearchBar/SearchBar";
 import NoteList from "containers/NoteList/NoteList";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

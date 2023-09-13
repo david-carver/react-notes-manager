@@ -1,5 +1,5 @@
 import NoteAPI from "api/note-api";
-import Header from "componentsTemp/Header/Header";
+import Header from "components/Header/Header";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";

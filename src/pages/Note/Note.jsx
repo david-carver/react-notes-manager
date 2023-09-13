@@ -1,5 +1,5 @@
 import NoteAPI from "api/note-api";
-import NoteForm from "componentsTemp/NoteForm/NoteForm";
+import NoteForm from "components/NoteForm/NoteForm";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
