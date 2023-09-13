@@ -1,5 +1,4 @@
 {
-  "app": "react-notes-manager",
   "framework": "react",
   "dev": "npm run start",
   "json-server": "node json-server.js",
