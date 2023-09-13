@@ -1,8 +1,14 @@
 import fs from "fs";
 import path from "path";
 
+const dbPath = path.join(process.cwd(), "db.json");
+
+// Initialize db.json if it doesn't exist
+if (!fs.existsSync(dbPath)) {
+  fs.writeFileSync(dbPath, JSON.stringify({ notes: [] }));
+}
+
 export default (req, res) => {
-  const dbPath = path.join(process.cwd(), "db.json");
   const rawData = fs.readFileSync(dbPath);
   const db = JSON.parse(rawData);
 
