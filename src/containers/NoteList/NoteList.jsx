@@ -1,5 +1,5 @@
 import s from "./NoteList.module.css";
-import TextCard from "components/TextCard/TextCard";
+import TextCard from "componentsTemp/TextCard/TextCard";
 import { useNavigate } from "react-router-dom";
 
 export default function NoteList({ onClickTrash, noteList }) {

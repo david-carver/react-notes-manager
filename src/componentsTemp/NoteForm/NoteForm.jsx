@@ -1,9 +1,9 @@
 import { PencilFill, TrashFill } from "react-bootstrap-icons";
 import s from "./NoteForm.module.css";
-import ButtonPrimary from "components/ButtonPrimary/ButtonPrimary";
+import ButtonPrimary from "componentsTemp/ButtonPrimary/ButtonPrimary";
 import { useState } from "react";
 import ValidatorService from "services/validator";
-import FieldError from "components/FieldError/FieldError";
+import FieldError from "componentsTemp/FieldError/FieldError";
 
 const VALIDATOR = {
   title: (value) => {

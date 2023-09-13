@@ -1,7 +1,7 @@
-import { Logo } from "components/Logo";
+import { Logo } from "componentsTemp/Logo";
 import s from "./Header.module.css";
 import logoSrc from "assets/images/logo.png";
-import ButtonPrimary from "components/ButtonPrimary/ButtonPrimary";
+import ButtonPrimary from "componentsTemp/ButtonPrimary/ButtonPrimary";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
