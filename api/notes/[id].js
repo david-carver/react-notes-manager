@@ -3,7 +3,11 @@ import { db } from "../data";
 export default (req, res) => {
   const { id } = req.query;
 
+  console.log(id);
+
   const noteIndex = db.notes.findIndex((n) => n.id === parseInt(id));
+
+  console.log(noteIndex);
 
   switch (req.method) {
     case "GET":
