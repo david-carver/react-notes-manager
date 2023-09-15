@@ -1,37 +1,60 @@
-import { db } from "../data";
+const { send, json } = require("micro");
+const db = require("../data.js");
 
-export default (req, res) => {
+module.exports = async (req, res) => {
   const { id } = req.query;
-
-  console.log(id);
-
   const noteIndex = db.notes.findIndex((n) => n.id === parseInt(id));
 
-  console.log(noteIndex);
+  // Setting headers for CORS - modify as per your needs
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, PATCH, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   switch (req.method) {
+    case "OPTIONS": // Preflight request. Reply successfully:
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, PATCH, DELETE, OPTIONS"
+      );
+      send(res, 200);
+      break;
+
     case "GET":
-      if (noteIndex !== -1) return res.status(200).json(db.notes[noteIndex]);
-      else return res.status(404).json({ message: "Note not found." });
+      if (noteIndex !== -1) {
+        res.setHeader("Content-Type", "application/json");
+        send(res, 200, db.notes[noteIndex]);
+      } else {
+        res.setHeader("Content-Type", "application/json");
+        send(res, 404, { message: "Note not found." });
+      }
+      break;
 
     case "PATCH":
-      if (noteIndex === -1)
-        return res.status(404).json({ message: "Note not found." });
-
-      const updatedNote = { ...db.notes[noteIndex], ...req.body }; // Merge existing note data with updated data from the request body
-      db.notes[noteIndex] = updatedNote;
-
-      return res.status(200).json(updatedNote);
+      if (noteIndex === -1) {
+        res.setHeader("Content-Type", "application/json");
+        send(res, 404, { message: "Note not found." });
+      } else {
+        const updatedData = await json(req);
+        const updatedNote = { ...db.notes[noteIndex], ...updatedData }; // Merge existing note data with updated data from the request body
+        db.notes[noteIndex] = updatedNote;
+        res.setHeader("Content-Type", "application/json");
+        send(res, 200, updatedNote);
+      }
+      break;
 
     case "DELETE":
       if (noteIndex !== -1) {
         db.notes.splice(noteIndex, 1);
-        return res.status(200).json({ message: "Note deleted." });
+        res.setHeader("Content-Type", "application/json");
+        send(res, 200, { message: "Note deleted." });
       } else {
-        return res.status(404).json({ message: "Note not found." });
+        res.setHeader("Content-Type", "application/json");
+        send(res, 404, { message: "Note not found." });
       }
+      break;
 
     default:
-      return res.status(405).end(); // Method Not Allowed for unsupported methods
+      send(res, 405); // Method Not Allowed for unsupported methods
   }
 };

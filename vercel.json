@@ -1,0 +1,6 @@
+{
+  "routes": [
+    { "src": "/api/db.json", "status": 404, "dest": "/404" },
+    { "src": "/api/index.js", "status": 404, "dest": "/404" }
+  ]
+}

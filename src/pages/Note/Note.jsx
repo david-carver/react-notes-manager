@@ -1,4 +1,4 @@
-import NoteAPI from "api/note-api";
+import NoteAPI from "api/note";
 import NoteForm from "components/NoteForm/NoteForm";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

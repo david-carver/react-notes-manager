@@ -1,1 +1,1 @@
-export const db = { notes: [] };
+module.exports = { notes: [] };

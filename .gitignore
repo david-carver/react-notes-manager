@@ -129,3 +129,4 @@ dist
 # custom
 /db.json
 /build
+.vercel

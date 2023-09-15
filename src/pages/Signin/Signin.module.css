@@ -1,0 +1,23 @@
+.form-container {
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-group {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group > * {
+  margin: 10px;
+}
+
+.button {
+  margin-top: 50px;
+  width: 100%;
+}

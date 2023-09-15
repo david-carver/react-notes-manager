@@ -1,4 +1,4 @@
-import NoteAPI from "api/note-api";
+import NoteAPI from "api/note";
 import SearchBar from "components/SearchBar/SearchBar";
 import NoteList from "containers/NoteList/NoteList";
 import { useState } from "react";
